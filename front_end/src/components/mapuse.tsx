@@ -4,7 +4,7 @@ import axios from "axios";
 function Mapuse() {
   const [lat, setlat] = useState(null);
   const [lon, setlon] = useState(null);
-  useEffect(() => {
+  const callapi = () => {
     const geo = navigator.geolocation;
     geo.getCurrentPosition(success, errorCallback);
     function success(position: any) {
@@ -16,13 +16,14 @@ function Mapuse() {
     function errorCallback(err: any) {
       console.log(err);
     }
-  }, []);
-  useEffect(() => {
     axios.post("http://localhost:3030/api/incidentAlert", {
       locationCoordinates: [lat, lon],
     });
+  };
+  useEffect(() => {
+    callapi();
   }, [lat, lon]);
-
+  setInterval(callapi, 1200000);
   return (
     <div>
       <h1>{lat}</h1>
