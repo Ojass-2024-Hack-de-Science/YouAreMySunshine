@@ -6,6 +6,7 @@ const path = require('path')
 const cors = require('cors')
 
 const indexRouter=require('./api/index')
+const userRouter=require('./api/user')
 
 
 //initialized express app
@@ -24,6 +25,7 @@ app.use(cors());
 
 //for api routes
 app.use('/api',indexRouter)
+app.use('/api/user',userRouter)
 
 //connect to database and listen to port
 port=process.env.PORT||3030
