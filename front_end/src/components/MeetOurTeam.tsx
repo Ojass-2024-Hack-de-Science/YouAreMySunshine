@@ -41,8 +41,8 @@ function MeetOurTeam() {
           Meet Our Team
         </h2>
         <p className="text-base md:text-lg text-white items-center mb-4">
-          We're all about teamwork, creativity, and pushing boundaries.
-          Let'srock this hackathon!
+          {` We're all about teamwork, creativity, and pushing boundaries.
+          Let's  rock this hackathon!`}
         </p>
         <div className="flex flex-row items-center justify-center mb-10 w-full ">
           <AnimatedTooltip items={people} />
