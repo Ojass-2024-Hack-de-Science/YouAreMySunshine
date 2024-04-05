@@ -1,4 +1,4 @@
-import FeautredCourses from "@/components/FeautredCourses";
+import FeautredCourses from "@/components/TrafficHero";
 import HeroSection from "@/components/HeroSection";
 import MeetOurInstructors from "@/components/MeetOurInstructors";
 import Testimonial from "@/components/Testimonial";
