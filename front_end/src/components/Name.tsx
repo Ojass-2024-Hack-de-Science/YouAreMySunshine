@@ -6,12 +6,6 @@ export function TypewriterEffectSmoothDemo() {
       text: "RoadMaster.",
       className: "text-blue-500 dark:text-blue-500",
     },
-    // {
-    //   text: "Master",
-    // },
-    // {
-    //   text: ".",
-    // },
   ];
   return <TypewriterEffectSmooth words={words} />;
 }

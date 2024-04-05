@@ -20,14 +20,9 @@ function HeroSection() {
 
           <p className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto">
             Introducing RoadMaster, your Real-Time Traffic Optimization
-            Solution. RoadMaster seamlessly navigates congested roads and busy
-            intersections, ensuring timely arrivals. Our advanced algorithms
-            analyze live traffic data, weather, and incidents, providing optimal
-            routes instantly. Say goodbye to traffic jams and hello to
-            stress-free journeys with RoadMaster. Commute to work, run errands,
-            or plan road trips effortlessly. RoadMaster adapts to your needs,
-            dynamically adjusting routes to avoid delays. Experience the art of
-            seamless travel with RoadMaster. Download our app now and optimize
+            Solution. Say goodbye to traffic jams and hello to
+            stress-free journeys with RoadMaster. 
+            Download our app now and optimize
             your journeys instantly.
           </p>
           <div className="mt-4">
