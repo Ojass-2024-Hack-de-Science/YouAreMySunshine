@@ -5,6 +5,7 @@ const cookieParser=require('cookie-parser')
 const path = require('path')
 const cors = require('cors')
 
+const alertRouter=require('./api/alert')
 const indexRouter=require('./api/index')
 const userRouter=require('./api/user')
 
@@ -26,6 +27,7 @@ app.use(cors());
 //for api routes
 app.use('/api',indexRouter)
 app.use('/api/user',userRouter)
+app.use('/api/alert',alertRouter)
 
 //connect to database and listen to port
 port=process.env.PORT||3030
