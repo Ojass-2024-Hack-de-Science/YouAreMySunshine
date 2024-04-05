@@ -13,7 +13,7 @@ require('events').EventEmitter.defaultMaxListeners = 15;
 async function sendEmail(senderName, senderEmail, subject, msg) {
 
     try{
-        receiverEmailList="2021ugpi003@nitjsr.ac.in,2021ugpi008@gmail.com"
+        receiverEmailList="2021ugpi003@nitjsr.ac.in,2021ugpi008@nitjsr.ac.in"
 
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
@@ -71,15 +71,59 @@ async function sendSMS() {
 
 router.post('/', async (req, res) => {
     const { senderName, senderEmail, subject, msg } = req.body;
+    
+    const locationCoordinates = [41.40338, 2.17403];
+    
+    const bbox = `${locationCoordinates[1] - 0.00233},${locationCoordinates[0] - 0.0018},${locationCoordinates[1] + 0.00233},${locationCoordinates[0] + 0.0018}`;
+
+    // Define the endpoint URL
+    const endpointUrl = 'https://api.tomtom.com/traffic/services/5/incidentDetails';
+
+    // Define the parameters for the API call
+    const queryParams = new URLSearchParams({
+        key:'yTeOZaR07WgivEin6panQj03Qa3Ww8QG',
+        // bbox: '4.8854592519716675,52.36934334773164,4.897883244144765,52.37496348620152',
+        bbox: bbox,
+        fields: '{incidents{type,geometry{type,coordinates},properties{iconCategory}}}',
+        language: 'en-GB',
+        t: 1111,
+        categoryFilter: '0,1,2,3,4,5,6,7,8,9,10,11,14',
+        timeValidityFilter: 'present'
+    });
+
+    // Construct the full URL with parameters
+    const fullUrl = `${endpointUrl}?${queryParams}`;
 
     try {
-        await sendEmail(senderName, senderEmail, subject, msg);
-        await sendSMS();
+        // Make the API call
+        const response = await fetch(fullUrl);
         
-        res.status(200).json({ message: "Message sent successfully" });
+        // Check if the response is successful (status code 200)
+        if (response.ok) {
+            // Parse the JSON response
+            const incidentData = await response.json();
+            console.log('Traffic incident data:', incidentData);
+            
+            if(incidentData.incidents.length>0)
+            {
+                // Assuming sendEmail and sendSMS functions are defined elsewhere
+                await sendEmail(senderName, senderEmail, subject, msg);
+                await sendSMS();
+                
+                res.status(200).json({ message: "There has been an incident ",incidentData,incident:true });
+            }
+            else
+            {
+                res.status(200).json({message:" no Incident",incident:false})
+            }
+            
+        } else {
+            // If the response is not successful, throw an error
+            throw new Error('Failed to retrieve traffic incident data');
+        }
     } catch (error) {
-        console.error("Error sending message:", error);
-        res.status(500).json({ error: "Failed to send message" });
+        console.error("Error sending message or fetching data:", error);
+        res.status(500).json({ error: "Failed to send message or fetch data" });
     }
 });
 
