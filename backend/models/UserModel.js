@@ -4,14 +4,16 @@ const validator = require('validator')
 
 const Schema=mongoose.Schema
 
-const UserSchema=new Schema({
-    salutation:String,
-    firstName:String,
-    lastName:String,
-    email:String,
-    phoneNo:String,
-    password:String,
-})
+const UserSchema = new Schema({
+  salutation: String,
+  firstName: String,
+  lastName: String,
+  email: String,
+  phoneNo: String,
+  password: String,
+  locationCoordinates: Array,
+  timeStamp: Number
+});
 
 
 // static register method
@@ -85,21 +87,5 @@ UserSchema.statics.register = async function(salutation,firstName,lastName,email
     return user
   }
 
-  //pre to create a new profile document before save signup 
-  // UserSchema.pre('save', async function(next) {
-  //   if (this.isNew) {
-  //     try {
-  //       const profile = await Profile.create({ userId: this._id });
-  //       // do something with the newly created profile later if needed
-  //       this.profileId=profile._id
-  //       next();
-  //     } catch (err) {
-  //       next(err);
-  //     }
-  //   } else {
-  //     next();
-  //   }
-  // });
-  
 
 module.exports=mongoose.model('User',UserSchema)
