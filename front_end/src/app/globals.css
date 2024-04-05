@@ -20,9 +20,16 @@ body {
   color: white;
   background: gray;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
+.scroll-remove::-webkit-scrollbar{
+  display: none;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+

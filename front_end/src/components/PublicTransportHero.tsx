@@ -2,7 +2,10 @@
 import React from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import Image from "next/image";
-import img from "../../public/Screenshot (1).png";
+import img from "../../public/20945926.jpg";
+import img1 from "../../public/27265.jpg";
+import { BackgroundGradient } from "./ui/background-gradient";
+
 const publictransport = [
   {
     title: "Intelligent Route Optimization",
@@ -13,12 +16,13 @@ const publictransport = [
     title: "Passenger-Centric Experience",
     description:
       "Empower transit users with real-time information, service updates, and personalized recommendations, improving their overall commuting experience and increasing ridership."
+   
   },
   {
     title: "Vehicle-to-Infrastructure Integration",
     description:
-      "Implement a communication system that allows buses to interact with traffic signals, enabling priority passage and improving the speed and punctuality of public transportation.",
-  
+      "Implement a communication system that allows buses to interact with traffic signals, enabling priority passage and improving the speed and punctuality of public transportation."
+   
   },
 ];
 function Whychooseus() {

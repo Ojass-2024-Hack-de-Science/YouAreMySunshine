@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { TypewriterEffectSmoothDemo } from "@/components/Name";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <div className="relative w-full flex items-center justify-center">
-          <Navbar />
+        <div className="relative flex gap-10  bg-black/[0.96]  bg-grid-white/[0.02]">
+          <div className="py-8 px-8">
+            <TypewriterEffectSmoothDemo />
+          </div>
+
+          <div>
+            <Navbar />
+          </div>
         </div>
         {children}
       </body>
     </html>
   );
 }
- 

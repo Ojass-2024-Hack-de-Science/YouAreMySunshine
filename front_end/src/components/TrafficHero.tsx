@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { BackgroundGradient } from "./ui/background-gradient";
-import { Button } from "./ui/moving-border";
-import coursedata from "../data/data.json";
+
+import coursedata from "../data/data2.json";
+import { TypewriterFeatured } from "./Typewriterfeatured";
+
 interface Course {
   id: number;
   title: string;
@@ -17,14 +19,15 @@ function FeautredCourses() {
   );
   return (
     <div className="py-12 bg-gray-1000  ">
-      <div>
+      <div className="flex items-center justify-center">
         <div className="text-center">
           <h2 className=" text-base test-teal-600 font-semibold tracking-wide lowercase italic">
             Real-Time Traffic Optimization
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl ">
-            Smarter Traffic, Smoother Commutes
-          </p>
+
+          <div className="item">
+            <TypewriterFeatured />
+          </div>
         </div>
       </div>
       <div className="mt-10">
