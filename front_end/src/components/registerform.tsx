@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/utils/cn";
@@ -8,14 +8,58 @@ import {
   IconBrandGoogle,
   IconBrandOnlyfans,
 } from "@tabler/icons-react";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    salutation: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNo: "",
+    password: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    try {
+      const response = await axios.post(
+        "http://localhost:3030/api/user/register",
+        formData
+      );
+      console.log("Form submitted successfully", response);
+      // Reset form after successful submission
+      if (response.data.success) {
+        toast.success("user registered successfully ");
+      } else {
+        toast.error(response.data.message);
+      }
+      setFormData({
+        salutation: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNo: "",
+        password: "",
+      });
+    } catch (error: any) {
+      console.error("Error submitting form:", error.response.data.error);
+      toast.error(error.response.data.error);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+      <Toaster position="top-center" reverseOrder={false} />
+
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to RoadMaster.
       </h2>
@@ -26,29 +70,71 @@ export function SignupFormDemo() {
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
-            <Label htmlFor="salutation">Salutation</Label>
-            <Input id="salutation" placeholder="Mr/Mrs" type="text" />
+            <Label htmlFor="salutation">salutation</Label>
+            <Input
+              id="salutation"
+              name="salutation"
+              placeholder="Mr/Mrs"
+              type="text"
+              value={formData.salutation}
+              onChange={handleChange}
+            />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
+            <Label htmlFor="firstName">First name</Label>
+            <Input
+              id="firstName"
+              placeholder="Tyler"
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" />
+            <Label htmlFor="lastName">Last name</Label>
+            <Input
+              id="lastName"
+              placeholder="Durden"
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Label htmlFor="email">email Address</Label>
+          <Input
+            id="email"
+            placeholder="projectmayhem@fc.com"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="phone">Password</Label>
-          <Input id="phone" placeholder="9X753XXX" type="number" />
+          <Label htmlFor="phoneNo">Phone No.</Label>
+          <Input
+            id="phoneNo"
+            placeholder="9X753XXX"
+            type="number"
+            name="phoneNo"
+            value={formData.phoneNo}
+            onChange={handleChange}
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="password">Password</Label>
-          <Input id="password" placeholder="••••••••" type="password" />
+          <Label htmlFor="password">password</Label>
+          <Input
+            id="password"
+            placeholder="••••••••"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
         </LabelInputContainer>
 
         <button
