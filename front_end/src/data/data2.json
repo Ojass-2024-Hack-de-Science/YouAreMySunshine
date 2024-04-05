@@ -13,6 +13,13 @@
       "slug": "public-transportation",
       "description": "Leverage advanced algorithms to anticipate traffic patterns and bottlenecks.",
       "isFeatured": true
+    },
+    {
+      "id": 3,
+      "title": "Intelligent Incident Response",
+      "slug": "intelligent-response",
+      "description": "Detect and respond to accidents, construction, and other disruptions in real-time, implementing dynamic rerouting to minimize the impact on traffic.",
+      "isFeatured": true
     }
   ]
   }
