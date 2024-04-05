@@ -3,7 +3,6 @@ import React from "react";
 import { WavyBackground } from "./ui/wavy-background";
 
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-import img from "../../public/Screenshot (1).png";
 const people = [
   {
     id: 1,
@@ -48,7 +47,7 @@ const people = [
       "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
   },
 ];
-function MeetOurInstructors() {
+function MeetOurTeam() {
   return (
     <div className="relative h-[40rem] overflow-hidden flex items-center justify-center">
       <WavyBackground className="max-w-4xl mx-auto pb-40 ">
@@ -69,4 +68,4 @@ function MeetOurInstructors() {
   );
 }
 
-export default MeetOurInstructors;
+export default MeetOurTeam;

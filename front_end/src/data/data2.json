@@ -13,13 +13,6 @@
       "slug": "public-transportation",
       "description": "Leverage advanced algorithms to anticipate traffic patterns and bottlenecks.",
       "isFeatured": true
-    },
-    {
-      "id": 3,
-      "title": "Predictive Analytics for Informed Decisions",
-      "slug": "public-transportation",
-      "description": "Leverage advanced algorithms to anticipate traffic patterns and bottlenecks.",
-      "isFeatured": true
     }
   ]
   }
