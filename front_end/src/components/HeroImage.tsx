@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import React from "react";
-import map from "../../public/maphero.png"
+import map from "../../public/maphero.png";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import Link from "next/link";
 export function ThreeDCardDemo() {
   return (
     <CardContainer className="inter-var">
@@ -12,9 +13,14 @@ export function ThreeDCardDemo() {
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white"
         >
-          <h2>Maps?? No. <span className="text-blue-500 dark:text-blue-500">RoadMaster.</span></h2>
+          <h2>
+            Maps?? No.{" "}
+            <span className="text-blue-500 dark:text-blue-500">
+              RoadMaster.
+            </span>
+          </h2>
         </CardItem>
-        
+
         <CardItem
           translateZ="100"
           rotateX={20}
@@ -30,14 +36,16 @@ export function ThreeDCardDemo() {
           />
         </CardItem>
         <div className="flex justify-between items-center mt-20">
-          <CardItem
-            translateZ={20}
-            translateX={40}
-            as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-          >
-            Sign up
-          </CardItem>
+          <Link href={"/signup"}>
+            <CardItem
+              translateZ={20}
+              translateX={40}
+              as="button"
+              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+            >
+              Sign up
+            </CardItem>
+          </Link>
         </div>
       </CardBody>
     </CardContainer>
