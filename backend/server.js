@@ -27,7 +27,7 @@ app.use(cors());
 //for api routes
 app.use('/api',indexRouter)
 app.use('/api/user',userRouter)
-app.use('/api/alert',alertRouter)
+app.use('/api/incidentAlert',alertRouter)
 
 //connect to database and listen to port
 port=process.env.PORT||3030

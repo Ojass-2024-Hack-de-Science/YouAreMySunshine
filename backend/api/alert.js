@@ -70,9 +70,12 @@ async function sendSMS() {
 }
 
 router.post('/', async (req, res) => {
-    const { senderName, senderEmail, subject, msg } = req.body;
+    const {  locationCoordinates} = req.body;
+
+    let senderName="shubham", senderEmail="example@gmail.com", subject="Emergency Alert";
+    let msg="There has been an accident on Main Street. Please send help immediately"
     
-    const locationCoordinates = [41.40338, 2.17403];
+    // const locationCoordinates = [41.40338, 2.17403];
     
     const bbox = `${locationCoordinates[1] - 0.00233},${locationCoordinates[0] - 0.0018},${locationCoordinates[1] + 0.00233},${locationCoordinates[0] + 0.0018}`;
 
@@ -82,8 +85,8 @@ router.post('/', async (req, res) => {
     // Define the parameters for the API call
     const queryParams = new URLSearchParams({
         key:'yTeOZaR07WgivEin6panQj03Qa3Ww8QG',
-        // bbox: '4.8854592519716675,52.36934334773164,4.897883244144765,52.37496348620152',
-        bbox: bbox,
+        bbox: '4.8854592519716675,52.36934334773164,4.897883244144765,52.37496348620152',
+        // bbox: bbox,
         fields: '{incidents{type,geometry{type,coordinates},properties{iconCategory}}}',
         language: 'en-GB',
         t: 1111,
