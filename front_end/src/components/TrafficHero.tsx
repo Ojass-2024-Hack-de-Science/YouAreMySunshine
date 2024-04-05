@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { BackgroundGradient } from "./ui/background-gradient";
-import { Button } from "./ui/moving-border";
+
 import coursedata from "../data/data.json";
 import { TypewriterFeatured } from "./Typewriterfeatured";
+
 interface Course {
   id: number;
   title: string;
