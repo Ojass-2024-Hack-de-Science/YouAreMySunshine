@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { BackgroundGradient } from "./ui/background-gradient";
 
-import coursedata from "../data/data.json";
+import coursedata from "../data/data2.json";
 import { TypewriterFeatured } from "./Typewriterfeatured";
 
 interface Course {
