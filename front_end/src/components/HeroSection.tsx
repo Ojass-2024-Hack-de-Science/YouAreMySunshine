@@ -15,14 +15,20 @@ function HeroSection() {
       >
         <div className="p-4 relative z-10 w-full text-center">
           <h1 className="mt-20 md:mt-0 text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-            Master The Art
+            Real-Time Traffic Optimization Solution
           </h1>
 
           <p className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores
-            modi vitae recusandae ea fugiat laboriosam illum, doloribus quae
-            ipsum explicabo totam nihil suscipit molestiae, aperiam odit
-            tenetur! Reprehenderit, explicabo ratione.
+            Introducing RoadMaster, your Real-Time Traffic Optimization
+            Solution. RoadMaster seamlessly navigates congested roads and busy
+            intersections, ensuring timely arrivals. Our advanced algorithms
+            analyze live traffic data, weather, and incidents, providing optimal
+            routes instantly. Say goodbye to traffic jams and hello to
+            stress-free journeys with RoadMaster. Commute to work, run errands,
+            or plan road trips effortlessly. RoadMaster adapts to your needs,
+            dynamically adjusting routes to avoid delays. Experience the art of
+            seamless travel with RoadMaster. Download our app now and optimize
+            your journeys instantly.
           </p>
           <div className="mt-4">
             <Link href={"/courses"}>
@@ -30,7 +36,7 @@ function HeroSection() {
                 borderRadius="1.75rem"
                 className="bg-black text-black dark:text-white border-neutral-200 dark:border-blue-800"
               >
-                Explore Courses
+                Explore Us
               </Button>
             </Link>
           </div>
