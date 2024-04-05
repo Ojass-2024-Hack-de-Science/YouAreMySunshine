@@ -1,9 +1,9 @@
-import FeautredCourses from "@/components/FeautredCourses";
+import FeautredCourses from "@/components/TrafficHero";
 import { ThreeDCardDemo } from "@/components/HeroImage";
 import HeroSection from "@/components/HeroSection";
-import MeetOurInstructors from "@/components/MeetOurInstructors";
+import MeetOurTeam from "@/components/MeetOurTeam";
 import Testimonial from "@/components/Testimonial";
-import Whychooseus from "@/components/Whychooseus";
+import Whychooseus from "@/components/PublicTransportHero";
 import { Spotlight } from "@/components/ui/Spotlight";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <FeautredCourses />
       <Whychooseus />
       <Testimonial />
-      <MeetOurInstructors />
+      <MeetOurTeam />
     </main>
   );
 }

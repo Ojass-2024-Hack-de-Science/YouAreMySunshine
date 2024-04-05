@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 import { BackgroundGradient } from "./ui/background-gradient";
-import Image from "next/image";
 import { Button } from "./ui/moving-border";
 import coursedata from "../data/data.json";
+import { TypewriterFeatured } from "./Typewriterfeatured";
 interface Course {
   id: number;
   title: string;
   slug: string;
   description: string;
-  price: number;
-  instructor: string;
   isFeatured: boolean;
 }
 function FeautredCourses() {
@@ -19,15 +17,16 @@ function FeautredCourses() {
     (course: Course) => course.isFeatured
   );
   return (
-    <div className="py-12 bg-gray-900  ">
-      <div>
+    <div className="py-12 bg-gray-1000  ">
+      <div className="flex items-center justify-center">
         <div className="text-center">
-          <h2 className=" text-base test-teal-600 font-semibold tracking-wide uppercase">
-            Featured Courses
+          <h2 className=" text-base test-teal-600 font-semibold tracking-wide lowercase italic">
+            Real-Time Traffic Optimization
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl ">
-            Learn with the Best
-          </p>
+
+          <div className="item">
+            <TypewriterFeatured />
+          </div>
         </div>
       </div>
       <div className="mt-10">
@@ -48,11 +47,6 @@ function FeautredCourses() {
             </div>
           ))}
         </div>
-      </div>
-      <div className="mt-20 text-center">
-        <Link href={"/courses"}>
-          <Button>View All Courses</Button>
-        </Link>
       </div>
     </div>
   );
