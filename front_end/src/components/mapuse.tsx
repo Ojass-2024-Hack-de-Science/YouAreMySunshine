@@ -31,6 +31,7 @@ const geojsonData = {
           [4.8901725898, 52.370765372],
           [4.8900062928, 52.370581651],
           [4.8899472842, 52.3705320104],
+          [25.4661412, 81.8840872],
         ],
       },
     },
@@ -68,7 +69,13 @@ function Mapuse() {
     <div>
       <h1>{lat}</h1>
       <h1>{lon}</h1>
-      <MyMap data={geojsonData.incidents[0].geometry.coordinates} />
+
+      <MyMap
+        data={{
+          data1: geojsonData.incidents[0].geometry.coordinates,
+          data2: [lat, lon],
+        }}
+      />
     </div>
   );
 }

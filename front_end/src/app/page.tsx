@@ -5,7 +5,6 @@ import MeetOurTeam from "@/components/MeetOurTeam";
 import Testimonial from "@/components/Testimonial";
 import Whychooseus from "@/components/PublicTransportHero";
 import { Spotlight } from "@/components/ui/Spotlight";
-import Mapuse from "@/components/mapuse";
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
       <Whychooseus />
       <Testimonial />
       <MeetOurTeam />
-      <Mapuse />
     </main>
   );
 }
