@@ -10,7 +10,7 @@ export default function Harshit() {
   return (
     <div className="min-h-screen bg-black py-12 pt-36">
       <h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white ">
-        How are we better? ({data.courses.length})
+        How are we better?
       </h1>
       <div className="flex flex-wrap justify-center">
         {data.courses.map((course) => (

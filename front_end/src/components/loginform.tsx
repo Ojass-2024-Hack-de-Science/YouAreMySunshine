@@ -63,7 +63,7 @@ export function LoginForm() {
 
       <form className="my-8" onSubmit={handleSubmit}>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">email Address</Label>
+          <Label htmlFor="email">Email Address</Label>
           <Input
             id="email"
             placeholder="projectmayhem@fc.com"
@@ -75,7 +75,7 @@ export function LoginForm() {
         </LabelInputContainer>
 
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="password">password</Label>
+          <Label htmlFor="password">Password</Label>
           <Input
             id="password"
             placeholder="••••••••"

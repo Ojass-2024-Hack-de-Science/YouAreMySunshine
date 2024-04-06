@@ -70,7 +70,7 @@ export function SignupFormDemo() {
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
-            <Label htmlFor="salutation">salutation</Label>
+            <Label htmlFor="salutation">Salutation</Label>
             <Input
               id="salutation"
               name="salutation"
@@ -104,7 +104,7 @@ export function SignupFormDemo() {
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">email Address</Label>
+          <Label htmlFor="email">Email Address</Label>
           <Input
             id="email"
             placeholder="projectmayhem@fc.com"
@@ -126,7 +126,7 @@ export function SignupFormDemo() {
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="password">password</Label>
+          <Label htmlFor="password">Password</Label>
           <Input
             id="password"
             placeholder="••••••••"
