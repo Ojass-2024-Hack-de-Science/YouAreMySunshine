@@ -36,7 +36,8 @@ export default function MyMap({ data }: any) {
         position={{ lat: data.data2[0], lng: data.data2[1] }}
         icon={fancyIcon}
       />
-      {data.data1 &&
+      {data &&
+        data.data1 &&
         data.data1.map((coordinate: any, index: any) => (
           <Marker
             key={index}
