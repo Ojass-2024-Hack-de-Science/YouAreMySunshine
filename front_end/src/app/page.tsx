@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import MeetOurTeam from "@/components/MeetOurTeam";
 import Testimonial from "@/components/Testimonial";
 import Whychooseus from "@/components/PublicTransportHero";
-import { Spotlight } from "@/components/ui/Spotlight";
 
 export default function Home() {
   return (
