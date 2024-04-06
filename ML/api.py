@@ -121,13 +121,16 @@ def detect():
 
             bicycle_cnt = 0
             vehicle_cnt = 0
+            people_cnt = 0
             # filter out weak predictions by ensuring the detected
             # probability is greater than the minimum probability
             if confidence > 0.40 and classID == 4:
                 bicycle_cnt = bicycle_cnt + 1
             if confidence > 0.40 and classID == 2:
                 vehicle_cnt = vehicle_cnt+ 1
-    return bicycle_cnt,vehicle_cnt
+            if confidence > 0.40 and classID == 0:
+                people_cnt = people_cnt+ 1
+    return bicycle_cnt,vehicle_cnt , people_cnt
 
 @app.route("/",methods = ['POST'])
 def prediction():
